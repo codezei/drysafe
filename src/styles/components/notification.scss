@@ -1,0 +1,48 @@
+.notification {
+    padding: 1rem 1.25rem;
+    background: linear-gradient(to right, #E7F4E8 0%, #C8E6C9 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    &__availability {
+        position: relative;
+    }
+    &__indicator {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: green;
+        vertical-align: baseline;
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: green;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 1000ms infinite;
+        }
+    }
+    &__refresh {
+        font-weight: 300;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    } 
+    100% {
+                transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+    }
+}

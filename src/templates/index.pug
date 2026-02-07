@@ -1,0 +1,39 @@
+extends settings/layout
+
+prepend html
+	- const lang = "en";
+
+prepend head
+	- const pageTitle = ""
+	- const themeColor = "#ffffff"
+	- const pageDescription = ""
+	- const pageKeywords = ""
+	- const pageUrl = "";
+	- const pageImage = "img/logo-big.webp";
+	- const twitterImage = "img/logo-big.webp";
+append head
+append content
+	include mixins/btn
+	include components/header
+	main
+		include components/promo
+		include components/reviews
+		include components/experience
+		include components/how
+		include components/process
+		include components/history
+		include components/recovery
+		include components/community
+		include components/why
+		include components/response
+		
+		
+		include components/protect
+		
+		
+		include components/faq
+		include components/icons
+
+	//- include components/footer
+
+append scripts
