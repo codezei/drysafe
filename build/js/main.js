@@ -1,83 +1,19 @@
 (function () {
 	'use strict';
 
-	function header () {
-	  var header = document.querySelector('.header');
-	  var burger = document.querySelector('.js-burger');
-	  if (!header) return;
-	  burger.addEventListener('click', function (e) {
-	    document.documentElement.classList.toggle('open-menu');
-	    e.currentTarget.setAttribute('aria-expanded', !(e.currentTarget.getAttribute('aria-expanded') === 'true' ? true : false));
-	  });
-	  header.addEventListener('click', function (e) {
-	    if (e.target.tagName === 'A') {
-	      document.documentElement.classList.remove('open-menu');
-	      burger.setAttribute('aria-expanded', !(burger.getAttribute('aria-expanded') === 'true' ? true : false));
-	    }
-	  });
-	  var linkNav = document.querySelectorAll('[href^="#"]');
-	  var headerHeight = 0; // let headerHeight = header.getBoundingClientRect().height
-
-	  var V = 0.2;
-
-	  for (var i = 0; i < linkNav.length; i++) {
-	    linkNav[i].addEventListener('click', function (e) {
-	      e.preventDefault();
-	      var w = window.pageYOffset;
-	      var hash = this.href.replace(/[^#]*(.*)/, '$1');
-	      var tar = document.querySelector(hash);
-	      var t = tar.getBoundingClientRect().top - headerHeight;
-	      var start = null;
-	      requestAnimationFrame(step);
-
-	      function step(time) {
-	        if (start === null) {
-	          start = time;
-	        }
-
-	        var progress = time - start,
-	            r = t < 0 ? Math.max(w - progress / V, w + t) : Math.min(w + progress / V, w + t);
-	        window.scrollTo(0, r);
-
-	        if (r != w + t) {
-	          requestAnimationFrame(step);
-	        } else {
-	          location.hash = hash;
-	        }
-	      }
-
-	      if (t > 1 || t < -1) {
-	        requestAnimationFrame(step);
-	      }
-	    }); // gsap.to(".logo span", {
-	    //     opacity: 0.3,
-	    //     duration: 0.1,
-	    //     repeat: 5,
-	    //     yoyo: true,
-	    //     ease: "power1.inOut",
-	    //     onComplete: function() {
-	    //         gsap.to(".logo span", { opacity: 1, duration: 0.5 });
-	    //     }
-	    // });
-	  }
-	}
-
 	function reviews () {
 	  var reviewsSwiper = new Swiper(".reviews-swiper", {
 	    slidesPerView: 1,
 	    spaceBetween: 16,
 	    breakpoints: {
-	      576: {
-	        slidesPerView: 1.5
-	      },
 	      768: {
 	        slidesPerView: 2
 	      },
 	      1200: {
 	        slidesPerView: 3
 	      },
-	      1400: {
-	        slidesPerView: 3.5,
+	      1540: {
+	        slidesPerView: 4,
 	        spaceBetween: 24
 	      }
 	    },
@@ -142,17 +78,16 @@
 	}
 
 	document.addEventListener('DOMContentLoaded', function () {
-	  header();
+	  // header()
 	  reviews();
 	  accordion();
 	  history();
-	  gallery();
-	  AOS.init({
-	    offset: 80,
-	    duration: 200,
-	    easing: 'ease-in',
-	    once: true
-	  });
+	  gallery(); // AOS.init({
+	  // 	offset: 80,
+	  // 	duration: 200,
+	  // 	easing: 'ease-in',
+	  // 	once: true,
+	  // });
 	});
 
 }());

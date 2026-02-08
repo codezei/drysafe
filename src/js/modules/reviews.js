@@ -3,17 +3,14 @@ export default function () {
         slidesPerView: 1,
         spaceBetween: 16,
         breakpoints: {
-          576: {
-            slidesPerView: 1.5,
-          },
           768: {
             slidesPerView: 2,
           },
           1200: {
             slidesPerView: 3,
           },
-          1400: {
-            slidesPerView: 3.5,
+          1540: {
+            slidesPerView: 4,
             spaceBetween: 24,
           },
         },

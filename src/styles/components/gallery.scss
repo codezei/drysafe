@@ -1,5 +1,5 @@
 .gallery {
---swiper-navigation-color: #fff;
+// --swiper-navigation-color: #fff;
 }
 
 .work {
@@ -30,6 +30,12 @@
             &:before {
                 content: "After";
             }
+        }
+    }
+
+    @media screen and (max-width: 430.5px) {
+        &__item {
+            border-radius: 0;
         }
     }
 }

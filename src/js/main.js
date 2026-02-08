@@ -7,17 +7,17 @@ import gallery from './modules/gallery'
 
 document.addEventListener('DOMContentLoaded', function () {
 	
-	header()
+	// header()
 	reviews()
 	accordion()
 	history()
 	gallery()
 
-	AOS.init({
-		offset: 80,
-		duration: 200,
-		easing: 'ease-in',
-		once: true,
-	});
+	// AOS.init({
+	// 	offset: 80,
+	// 	duration: 200,
+	// 	easing: 'ease-in',
+	// 	once: true,
+	// });
 })
 

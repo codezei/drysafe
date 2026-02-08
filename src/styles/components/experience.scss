@@ -27,23 +27,25 @@
         }
     }
 
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: 431px) {
         &-grid {
-            align-items: center;
-            grid-template-areas: 
-            "T T T T T T T T T T T T"
-            "D D D D D D I I I I I I"
-            "D D D D D D B B B B B B"
-            "N N N N N N N N N N N N"
-            ;
+            // align-items: center;
+            // grid-template-areas: 
+            // "T T T T T T T T T T T T"
+            // "D D D D D D I I I I I I"
+            // "D D D D D D B B B B B B"
+            // "N N N N N N N N N N N N"
+            // ;
         }
     }
     @media screen and (min-width: 768px) {
         &-grid {
+            align-items: center;
             grid-template-areas: 
             "T T T T T T T T T T T T"
             "D D D D D D D I I I I I"
-            "N N N N N N N B B B B B"
+            "N N N N N N N N N N N N"
+            "B B B B B B B B B B B B"
             ;
         }
     }
@@ -51,13 +53,16 @@
         &-grid {
             gap: 1rem 2rem;
             grid-template-areas: 
-            ". . . . . . . I I I I I"
             "T T T T T T T I I I I I"
             "D D D D D D D I I I I I"
-            "N N N N N N N I I I I I"
-            "B B B B B B B I I I I I"
-            ". . . . . . . I I I I I"
+            "N N N N N N N N N N N N"
+            "B B B B B B B B B B B B"
             ;
+        }
+        &__notification {
+            max-width: 570px;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
     @media screen and (min-width: 1220px) {
@@ -65,9 +70,15 @@
             gap: 1.5rem 3rem;
         }
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: 1540px) {
         &-grid {
             gap: 2rem 4rem;
+                        grid-template-areas: 
+            "T T T T T T T I I I I I"
+            "D D D D D D D I I I I I"
+            "N N N N N N N I I I I I"
+            "B B B B B B B I I I I I"
+            ;
         }
     }
 }

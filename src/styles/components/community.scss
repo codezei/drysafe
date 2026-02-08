@@ -25,7 +25,7 @@
         margin-top: 0.75rem;
     }
 
-    @media screen and (min-width: 576px) {
+    @media screen and (min-width: 431px) {
         &-grid {
             align-items: center;
             // grid-template-areas:
@@ -48,10 +48,12 @@
         &-grid {
             gap: 1rem 2rem;
             grid-template-areas:
+                // ". . . . . . . I I I I I"
                 ". . . . . . . I I I I I"
                 "T T T T T T T I I I I I"
                 "D D D D D D D I I I I I"
                 ". . . . . . . I I I I I"
+                // ". . . . . . . I I I I I"
             ;
         }
     }
