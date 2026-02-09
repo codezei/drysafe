@@ -1,5 +1,6 @@
 .recovery {
     overflow: hidden;
+    color: var(--dark);
     &__subtitle {
         margin-bottom: 2.5rem;
     }
@@ -144,7 +145,7 @@
         }
     }
 
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: 1540px) {
         &__subtitle {
             margin-bottom: 6rem;
         }

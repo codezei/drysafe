@@ -2,6 +2,7 @@ export default function () {
     let reviewsSwiper = new Swiper(".reviews-swiper", {
         slidesPerView: 1,
         spaceBetween: 16,
+        loop: true,
         breakpoints: {
           768: {
             slidesPerView: 2,

@@ -16,7 +16,7 @@
         height: 6px;
         border-radius: 50%;
         background: green;
-        vertical-align: baseline;
+        vertical-align: 0.125em;
         position: relative;
         animation: pulse 1000ms infinite;
         // &:before {
@@ -47,7 +47,11 @@
                 justify-content: center;
         text-align: center ;
     }
-}
+
+    @media screen and (min-width: 1540px) {
+        font-size: 16px;
+    }
+ }
 
 @keyframes pulse {
     0% {

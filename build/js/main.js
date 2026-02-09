@@ -5,6 +5,7 @@
 	  var reviewsSwiper = new Swiper(".reviews-swiper", {
 	    slidesPerView: 1,
 	    spaceBetween: 16,
+	    loop: true,
 	    breakpoints: {
 	      768: {
 	        slidesPerView: 2
@@ -70,6 +71,7 @@
 	  var gallerySwiper = new Swiper(".gallery-swiper", {
 	    slidesPerView: 1,
 	    spaceBetween: 16,
+	    loop: true,
 	    navigation: {
 	      nextEl: ".swiper-button-next",
 	      prevEl: ".swiper-button-prev"
