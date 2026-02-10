@@ -35,6 +35,11 @@
     }
     &__refresh {
         font-weight: 300;
+        span {
+            min-width: 1em;
+            display: inline-block;
+            text-align: center;
+        }
     }
     
     @media screen and (max-width: 430.5px) {

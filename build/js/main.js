@@ -61,9 +61,12 @@
 	function history () {
 	  var video = document.querySelector(".video");
 	  var play = document.querySelector(".video__play");
+	  if (!video || !play) return;
 	  var videoId = video.dataset.id;
-	  play.addEventListener("click", function (e) {
-	    video.innerHTML = "\n    <iframe\n      src=\"https://www.youtube.com/embed/".concat(videoId, "?autoplay=1&rel=0\"\n      allow=\"autoplay; encrypted-media\"\n      allowfullscreen\n      loading=\"lazy\"\n    ></iframe>\n  ");
+	  var vimeoHash = "7e4b7653d3"; // статический hash
+
+	  play.addEventListener("click", function () {
+	    video.innerHTML = "\n      <iframe\n        src=\"https://player.vimeo.com/video/".concat(videoId, "?h=").concat(vimeoHash, "&autoplay=1&muted=1\"\n        allow=\"autoplay; fullscreen; picture-in-picture\"\n        allowfullscreen\n        loading=\"lazy\"\n      ></iframe>\n    ");
 	  });
 	}
 
@@ -79,12 +82,37 @@
 	  });
 	}
 
+	function notification () {
+	  var counters = document.querySelectorAll(".notification__refresh span");
+	  if (!counters.length) return;
+	  var timeLeft = 59;
+
+	  var updateCounters = function updateCounters() {
+	    counters.forEach(function (counter) {
+	      counter.textContent = timeLeft;
+	    });
+	  }; // initial render
+
+
+	  updateCounters();
+	  setInterval(function () {
+	    timeLeft--;
+
+	    if (timeLeft < 1) {
+	      timeLeft = 59;
+	    }
+
+	    updateCounters();
+	  }, 1000);
+	}
+
 	document.addEventListener('DOMContentLoaded', function () {
 	  // header()
 	  reviews();
 	  accordion();
 	  history();
-	  gallery(); // AOS.init({
+	  gallery();
+	  notification(); // AOS.init({
 	  // 	offset: 80,
 	  // 	duration: 200,
 	  // 	easing: 'ease-in',

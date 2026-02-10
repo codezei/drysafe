@@ -4,6 +4,7 @@ import reviews from './modules/reviews'
 import accordion from './modules/accordion'
 import history from './modules/history'
 import gallery from './modules/gallery'
+import notification from './modules/notification'
 
 document.addEventListener('DOMContentLoaded', function () {
 	
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	accordion()
 	history()
 	gallery()
+	notification()
 
 	// AOS.init({
 	// 	offset: 80,
