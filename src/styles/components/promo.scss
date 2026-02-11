@@ -8,6 +8,7 @@
     }
     &__title {
         margin-bottom: 0.75rem;
+        margin-top: 0.75rem;
     }
     &__description {
         margin-bottom: 1.5rem;
@@ -23,10 +24,20 @@
 
 
     @media screen and (max-width: 430.5px) {
-        padding-top: 0;
+        
         &__gallery {
             margin-left: -0.75rem;
             margin-right: -0.75rem;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 0;
+    }
+
+    @media screen and (min-width: 768px) {
+        &__title {
+            margin-top: 0;
         }
     }
 
@@ -93,6 +104,7 @@
     }
 
     @media screen and (min-width: 1540px) {
+        padding-top: 60px;
         &__info {
             display: flex;
             flex-direction: column;
@@ -100,6 +112,7 @@
         &__advantages {
             margin-bottom: auto;
         }
+
 
     }
 
